@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //имя приложения
+    <string name="app_name">Книжный уголок</string>
+    //дебагг локализации
+    <string name="hello_world">Здравствуй, Мир!</string>
+    //служебный нейминг
+    <string name="this_logo">logo app</string>
+    //вход
+
+</resources>

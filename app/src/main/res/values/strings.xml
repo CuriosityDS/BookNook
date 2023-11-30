@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //app name
+    <string name="app_name">BookNook</string>
+    //debug localization
+    <string name="hello_world">Hello world!</string>
+    //service name
+    <string name="this_logo">logo app</string>
+    //inlet
+
+</resources>
