@@ -6,6 +6,9 @@
     <string name="hello_world">Hello world!</string>
     //service name
     <string name="this_logo">logo app</string>
+    //errorFragments
+    <string name="update">update</string>
     //inlet
+
 
 </resources>

@@ -3,6 +3,25 @@
     <!-- Splash Screen Style -->
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/bg</item>
+        <item name="android:navigationBarColor">@color/bg</item>
     </style>
-
+    <!-- Тема для шрифта Quicksand -->
+    <style name="QuicksandFont_regular">
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+        <!-- Дополнительные настройки шрифта, если нужно -->
+    </style>
+    <style name="QuicksandFont_medium">
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <!-- Дополнительные настройки шрифта, если нужно -->
+    </style>
+    <!-- Стиль для кнопки с белым контуром и закругленными углами -->
+    <style name="TransparentButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/white_rounded_button_background</item>
+        <item name="android:fontFamily">QuicksandFont_medium</item>
+        <!-- Определенные отступы у букв -->
+        <item name="android:letterSpacing">0.5</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
 </resources>

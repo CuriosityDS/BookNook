@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Прозрачный фон -->
+    <item android:drawable="@android:color/transparent" />
+
+    <!-- Белый контур -->
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:color="#FFFFFF" android:width="5dp" />
+        </shape>
+    </item>
+
+</layer-list>
