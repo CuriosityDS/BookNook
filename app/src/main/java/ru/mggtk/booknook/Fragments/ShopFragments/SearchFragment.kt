@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.mggtk.booknook.R
+import ru.mggtk.booknook.databinding.FragmentHomeBinding
 import ru.mggtk.booknook.databinding.FragmentSearchBinding
 
 
@@ -18,8 +20,7 @@ class SearchFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentSearchBinding.inflate(inflater, container, false)
-        return binding.root
+        return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
     companion object {

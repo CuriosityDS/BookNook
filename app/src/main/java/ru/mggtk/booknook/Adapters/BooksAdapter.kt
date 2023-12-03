@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso
 import ru.mggtk.booknook.R
 import ru.mggtk.booknook.dataclass.Book
 
-class BooksAdapter(private val books: List<Book>, private val onAddToCartClickListener: (Book) -> Unit) :
+class BooksAdapter(private var books: List<Book>, private val onAddToCartClickListener: (Book) -> Unit) :
     RecyclerView.Adapter<BooksAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -50,7 +50,10 @@ class BooksAdapter(private val books: List<Book>, private val onAddToCartClickLi
         val density = Resources.getSystem().displayMetrics.density
         return (dp * density).toInt()
     }
-
+    fun updateItems(newItems: List<Book>) {
+        books = newItems
+        notifyDataSetChanged()
+    }
 
     override fun getItemCount(): Int {
         return books.size
