@@ -32,5 +32,21 @@
     <string name="search">поиск</string>
     <string name="profile">профиль</string>
     <string name="basket">корзина</string>
+    //главная
+    <string name="recommendations">.рекомендуем вам</string>
+    <string name="recommendationssubtitle">мы уверенны вам понравится</string>
 
+    <string name="allproduct">.остальные товары</string>
+    <string name="allproductsubtitle">тут тоже есть что то интересное</string>
+
+    <string name="add_basket">добавить в корзину</string>
+    <string name="about">О программе</string>
+
+    //заказ
+    <string name="order_paid">заказ оплачен</string>
+    <string name="total_cost">общая стоимость</string>
+    <string name="pay">оплатить</string>
+    <string name="delete">удалить</string>
+
+    <string name="abouttext">Добро пожаловать в программу BookNook, разработанную Curiosity\nв учебных целях в рамках учебной практики. Программа создана с целью облегчить процесс\nпокупки книг и сделать его более удобным для пользователей. BookNook предоставляет\nуникальную возможность исследовать мир литературы, предлагая широкий ассортимент книг различных жанров.</string>
 </resources>

@@ -33,6 +33,23 @@
     <string name="search">search</string>
     <string name="profile">profile</string>
     <string name="basket">basket</string>
+    //home
+    <string name="recommendations">.recommendations for you</string>
+    <string name="recommendationssubtitle">we think youll like it</string>
 
+    <string name="allproduct">.all products</string>
+    <string name="allproductsubtitle">there is something interesting here too</string>
+
+    <string name="add_basket">add basket</string>
+    <string name="about">About the program</string>
+
+    //order
+    <string name="order_paid">the order has been paid for</string>
+    <string name="total_cost">total cost</string>
+    <string name="pay">to pay</string>
+    <string name="delete">delete</string>
+
+
+    <string name="abouttext">Welcome to the BookNook program, developed by Curiosity for educational purposes as part\nof practical training. The program is designed to streamline the book purchasing process and make it more\nconvenient for users. BookNook offers a unique opportunity to explore the world of literature, providing a wide\nrange of books across various genres.</string>
 
 </resources>

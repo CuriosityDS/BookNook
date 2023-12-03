@@ -37,6 +37,21 @@
             app:layout_constraintStart_toStartOf="@+id/textView9"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAbout"
+            android:layout_width="270dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/dark_gray"
+            android:gravity="left"
+            android:text="@string/about"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textSize="10dp"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/btnChangeLanguage" />
+
         <TextView
             android:id="@+id/textView8"
             style="@style/titleTextStyle"

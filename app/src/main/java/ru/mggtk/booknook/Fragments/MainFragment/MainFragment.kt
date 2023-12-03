@@ -1,16 +1,10 @@
 package ru.mggtk.booknook.Fragments.MainFragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.NavController
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
 import ru.mggtk.booknook.Fragments.ShopFragments.BasketFragment
 import ru.mggtk.booknook.Fragments.ShopFragments.HomeFragment
 import ru.mggtk.booknook.Fragments.ShopFragments.ProfileFragment
@@ -36,7 +30,7 @@ class MainFragment : Fragment() {
                     replaceFragment(HomeFragment())
                     true
                 }
-                R.id.search -> {
+                R.id.searchFrame -> {
                     replaceFragment(SearchFragment())
                     true
                 }

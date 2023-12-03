@@ -1,18 +1,15 @@
 package ru.mggtk.booknook.Fragments.ShopFragments
 
 import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.core.app.ActivityCompat.invalidateOptionsMenu
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import ru.mggtk.booknook.MainActivity
 import ru.mggtk.booknook.R
 import ru.mggtk.booknook.check.LanguageManager
-import ru.mggtk.booknook.databinding.FragmentBasketBinding
 import ru.mggtk.booknook.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -34,7 +31,24 @@ class ProfileFragment : Fragment() {
         btnChangeLanguage.setOnClickListener {
             showLanguageSelectionDialog()
         }
+        binding.btnAbout.setOnClickListener {
+            showAboutDialog(requireContext())
+        }
+
         return binding.root
+    }
+    private fun showAboutDialog(context: Context) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("${getString(R.string.about)}")
+        val message = getString(R.string.abouttext)
+        builder.setMessage(message)
+
+        builder.setPositiveButton("OK") { dialog, which ->
+            dialog.dismiss()
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
     private fun showLanguageSelectionDialog() {
         val languages = arrayOf("en", "ru")
@@ -48,6 +62,7 @@ class ProfileFragment : Fragment() {
                 binding.textView8.text = getString(R.string.welcometext)
                 binding.textView9.text = getString(R.string.settings)
                 binding.btnChangeLanguage.text = getString(R.string.language_selection)
+                binding.btnAbout.text = getString(R.string.about)
             }
 
         builder.create().show()
