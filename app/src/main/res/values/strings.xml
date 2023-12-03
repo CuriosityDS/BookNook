@@ -4,6 +4,11 @@
     <string name="app_name">BookNook</string>
     //debug localization
     <string name="hello_world">Hello world!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="language_selection">Change the language</string>
+    <string name="settings">settings</string>
+
     //service name
     <string name="this_logo">logo app</string>
     //errorFragments
@@ -21,7 +26,13 @@
     <string name="errorauthentication">Authentication failed</string>
     //welcome
     <string name="welcometext">hello.Curiosity</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    //basket
+    <string name="basketempty">This basket is empty\n\n¯|_(ツ)_|¯</string>
+    //menu
+    <string name="home">home</string>
+    <string name="search">search</string>
+    <string name="profile">profile</string>
+    <string name="basket">basket</string>
+
 
 </resources>

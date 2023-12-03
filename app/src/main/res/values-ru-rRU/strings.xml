@@ -6,6 +6,10 @@
     <string name="hello_world">Здравствуй, Мир!</string>
     //служебный нейминг
     <string name="this_logo">logo app</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings">настройки</string>
+    //смена языка
+    <string name="language_selection">Выбор языка</string>
     //Фрагменты ошибок
     <string name="update">Обновить</string>
     <string name="nointernet">Кажется пони сьели ваш интернет</string>
@@ -21,5 +25,12 @@
     <string name="errorauthentication">Ошибка аутификации</string>
     //приветств.экран
     <string name="welcometext">привет.Curiosity</string>
+    //корзина
+    <string name="basketempty">Эта корзина пуста\n\n¯|_(ツ)_|¯</string>
+    //меню
+    <string name="home">главная</string>
+    <string name="search">поиск</string>
+    <string name="profile">профиль</string>
+    <string name="basket">корзина</string>
 
 </resources>

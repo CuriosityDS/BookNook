@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:fontFamily = "@font/quicksand_regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/homeicon"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/search"
+        android:fontFamily = "@font/quicksand_regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/searchicon"
+        android:title="@string/search" />
+    <item
+        android:id="@+id/profile"
+        android:fontFamily = "@font/quicksand_regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/profileicon"
+        android:title="@string/profile" />
+    <item
+        android:id="@+id/basket"
+        android:fontFamily = "@font/quicksand_regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/basketicon"
+        android:title="@string/basket" />
+</menu>

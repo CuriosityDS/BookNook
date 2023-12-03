@@ -9,15 +9,22 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import androidx.core.content.ContentProviderCompat.requireContext
 import ru.mggtk.booknook.ErrorActivity
 import ru.mggtk.booknook.InletActivity
 import ru.mggtk.booknook.MainActivity
 import ru.mggtk.booknook.R
 import ru.mggtk.booknook.check.InternetCheckUtil
+import ru.mggtk.booknook.check.LanguageManager
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val languageManager = LanguageManager(this)
+        val savedLanguage = languageManager.getAppLanguage()
+        // Установите язык приложения
+        languageManager.changeAppLanguage(savedLanguage)
 
         if (InternetCheckUtil.isInternetAvailable(this)) {
             setContentView(R.layout.activity_splash_screen)
