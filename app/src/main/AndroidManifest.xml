@@ -16,6 +16,15 @@
         android:theme="@style/Theme.BookNook"
         tools:targetApi="31">
         <activity
+            android:name=".SplashScreen.SplashScreenWelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InletActivity"
+            android:exported="false" />
+        <activity
             android:name=".ErrorActivity"
             android:exported="false" />
         <activity

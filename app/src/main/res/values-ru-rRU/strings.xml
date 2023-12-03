@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     //имя приложения
-    <string name="app_name">Книжный уголок</string>
+    <string name="app_name">BookNook</string>
     //дебагг локализации
     <string name="hello_world">Здравствуй, Мир!</string>
     //служебный нейминг
     <string name="this_logo">logo app</string>
     //Фрагменты ошибок
-    <string name="update">обновить</string>
+    <string name="update">Обновить</string>
+    <string name="nointernet">Кажется пони сьели ваш интернет</string>
     //вход
+    <string name="inlet">book.вход</string>
+    <string name="signup">Регистрация</string>
+    <string name="login">Вход</string>
+    //логин
+    <string name="welcomeback">с.возвращением</string>
+    <string name="email">почта</string>
+    <string name="password">пароль</string>
+    //логин ошибки
+    <string name="errorauthentication">Ошибка аутификации</string>
+    //приветств.экран
+    <string name="welcometext">привет.Curiosity</string>
 
 </resources>
