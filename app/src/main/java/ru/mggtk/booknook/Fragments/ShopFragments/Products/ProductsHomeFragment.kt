@@ -49,9 +49,13 @@ class ProductsHomeFragment : Fragment() {
             Book("Преступление и наказание", 449.50, "https://via.placeholder.com/150"),
             Book("Война и мир", 899.75, "https://via.placeholder.com/150"),
             Book("1984", 349.25, "https://via.placeholder.com/150"),
+            Book("Позор Кремля", 1699.99, "https://via.placeholder.com/150"),
             Book("Маленький принц", 299.90, "https://via.placeholder.com/150"),
             Book("Убить пересмешника", 539.80, "https://via.placeholder.com/150"),
-            Book("Мастер йоги", 189.60, "https://via.placeholder.com/150")
+            Book("Мастер йоги", 189.60, "https://via.placeholder.com/150"),
+            Book("Морфий", 1359.99, "https://via.placeholder.com/150"),
+            Book("Норвежский лес", 499.00, "https://via.placeholder.com/150"),
+            Book("Позор Солнца", 699.99, "https://via.placeholder.com/150")
         )
     }
 

@@ -29,6 +29,10 @@ class MainFragment : Fragment() {
                     replaceFragment(HomeFragment())
                     true
                 }
+                R.id.search -> {
+                    replaceFragment(SearchFragment())
+                    true
+                }
                 R.id.profile -> {
                     replaceFragment(ProfileFragment())
                     true
