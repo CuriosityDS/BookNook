@@ -7,14 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.ShopFragments.HomeFragment">
 
-
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="379dp"
-        android:layout_height="226dp"
-        android:layout_marginTop="-25dp"
-        android:src="@drawable/banner"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,11 +21,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="16dp"
         android:text="@string/recommendations"
         android:textColor="@color/gray"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+        app:layout_constraintTop_toBottomOf="@+id/viewPager2" />
 
     <TextView
         android:id="@+id/textView6"
@@ -47,7 +43,7 @@
         android:id="@+id/productHome"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6">
