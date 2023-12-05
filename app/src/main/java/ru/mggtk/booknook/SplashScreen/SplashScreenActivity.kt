@@ -1,18 +1,15 @@
 package ru.mggtk.booknook.SplashScreen
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
+import android.graphics.drawable.Animatable
+import android.graphics.drawable.AnimationDrawable
 import android.os.Handler
 import android.os.Looper
-import androidx.core.content.ContentProviderCompat.requireContext
+import android.widget.ImageView
 import ru.mggtk.booknook.ErrorActivity
 import ru.mggtk.booknook.InletActivity
-import ru.mggtk.booknook.MainActivity
 import ru.mggtk.booknook.R
 import ru.mggtk.booknook.check.InternetCheckUtil
 import ru.mggtk.booknook.check.LanguageManager
@@ -25,7 +22,6 @@ class SplashScreenActivity : AppCompatActivity() {
         val savedLanguage = languageManager.getAppLanguage()
         // Установите язык приложения
         languageManager.changeAppLanguage(savedLanguage)
-
         if (InternetCheckUtil.isInternetAvailable(this)) {
             setContentView(R.layout.activity_splash_screen)
             scheduleSplashScreen()
@@ -53,5 +49,9 @@ class SplashScreenActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }, splashScreenDuration)
+    }
+
+    companion object{
+        private val SPLASH_DISPLAY_LENGTH = 2500L
     }
 }

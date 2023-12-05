@@ -6,22 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.MainFragment.MainFragment">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+    <FrameLayout
+        android:id="@+id/MenuNavigation"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:background="@color/bg"
-        android:backgroundTint="@color/bg"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_btn" />
+        tools:layout_editor_absoluteX="1dp">
+
+    </FrameLayout>
 
     <FrameLayout
         android:id="@+id/MainView"
         android:layout_width="409dp"
         android:layout_height="654dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/MenuNavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

@@ -47,6 +47,7 @@ class BasketFullFragment : Fragment() {
 
         // Обработка нажатия кнопки "оплатить"
         binding.payButton.setOnClickListener {
+
             onPayButtonClick()
         }
 
