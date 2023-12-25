@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import ru.mggtk.booknook.R
@@ -19,7 +20,7 @@ class BooksAdapter(private var books: List<Book>, private val onAddToCartClickLi
         val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
         val priceTextView: TextView = itemView.findViewById(R.id.priceTextView)
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
-        val addToCartButton: Button = itemView.findViewById(R.id.addToCartButton)
+        //val addToCartButton: Button = itemView.findViewById(R.id.addToCartButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -35,9 +36,9 @@ class BooksAdapter(private var books: List<Book>, private val onAddToCartClickLi
         // Используем Picasso для загрузки изображения
         Picasso.get().load(book.imageUrl).into(holder.imageView)
 
-        holder.addToCartButton.setOnClickListener {
-            onAddToCartClickListener.invoke(book)
-        }
+//        holder.addToCartButton.setOnClickListener {
+//            onAddToCartClickListener.invoke(book)
+//        }
 
         // Устанавливаем отступ снизу для всех элементов, кроме последнего
         val marginBottom = if (position == books.size - 1) 0 else dpToPx(8)

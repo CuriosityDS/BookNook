@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="text_margin">16dp</dimen>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <dimen name="space_between_items">16dp</dimen>
 </resources>
+

@@ -19,15 +19,22 @@ import ru.mggtk.booknook.databinding.FragmentProfileBinding
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
     private lateinit var languageManager: LanguageManager
+    private var isDarkTheme: Boolean
+        get() = requireActivity().getPreferences(Context.MODE_PRIVATE).getBoolean("isDarkTheme", false)
+        set(value) {
+            requireActivity().getPreferences(Context.MODE_PRIVATE).edit().putBoolean("isDarkTheme", value).apply()
+        }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        isDarkTheme = isDarkTheme
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
+
 
         languageManager = LanguageManager(requireContext())
 
@@ -38,6 +45,10 @@ class ProfileFragment : Fragment() {
         binding.btnAbout.setOnClickListener {
             showAboutDialog(requireContext())
         }
+        binding.btnChangeTheme.setOnClickListener {
+
+        }
+
 
         return binding.root
     }
@@ -73,6 +84,7 @@ class ProfileFragment : Fragment() {
 
         builder.create().show()
     }
+
 
     companion object {
         @JvmStatic

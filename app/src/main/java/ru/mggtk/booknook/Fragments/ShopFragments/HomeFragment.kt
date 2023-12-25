@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.mggtk.booknook.Adapters.ViewPagerAdapter
+import ru.mggtk.booknook.Fragments.AdvertFragment
 import ru.mggtk.booknook.Fragments.ShopFragments.Products.ProductsHomeFragment
 import ru.mggtk.booknook.R
 import ru.mggtk.booknook.databinding.FragmentHomeBinding
@@ -22,30 +23,14 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        replaceFragment(ProductsHomeFragment())
-        binding.viewPager2.adapter = ViewPagerAdapter()
-        showProgress()
+        replaceFragment(ProductsHomeFragment(),R.id.productHome)
+        replaceFragment(AdvertFragment(),R.id.advertHolder)
         return binding.root
     }
 
-    private fun showProgress() {
-        try {
-            Thread {
-                for (i in 0..23) {
-
-                    binding.viewPager2.setCurrentItem(i, true)
-                    Thread.sleep(10000)
-                }
-
-            }.start()
-        }catch (e: java.lang.Exception){
-            showProgress()
-        }
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: Fragment, placeFragment:Int) {
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.productHome, fragment)
+        transaction.replace(placeFragment, fragment)
         transaction.commit()
     }
 

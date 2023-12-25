@@ -58,4 +58,5 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
 }

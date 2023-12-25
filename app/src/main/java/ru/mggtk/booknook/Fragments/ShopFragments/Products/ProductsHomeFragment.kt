@@ -1,16 +1,37 @@
 package ru.mggtk.booknook.Fragments.ShopFragments.Products
 
+import android.graphics.Rect
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import ru.mggtk.booknook.Adapters.BooksAdapter
+import ru.mggtk.booknook.R
 import ru.mggtk.booknook.ViewModels.BasketViewModel
 import ru.mggtk.booknook.databinding.FragmentProductsHomeBinding
 import ru.mggtk.booknook.dataclass.Book
+
+class HorizontalSpaceItemDecoration(private val space: Int) : RecyclerView.ItemDecoration() {
+
+    override fun getItemOffsets(
+        outRect: Rect,
+        view: View,
+        parent: RecyclerView,
+        state: RecyclerView.State
+    ) {
+        // Добавляем отступ справа для всех элементов, кроме последнего
+        if (parent.getChildAdapterPosition(view) != parent.adapter?.itemCount ?: 0 - 1) {
+            outRect.right = space
+        }
+    }
+}
 
 class ProductsHomeFragment : Fragment() {
 
@@ -29,7 +50,7 @@ class ProductsHomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val books = loadBooks()
+        val books = loadRandomBooks()
 
         basketViewModel = ViewModelProvider(requireActivity()).get(BasketViewModel::class.java)
 
@@ -38,8 +59,17 @@ class ProductsHomeFragment : Fragment() {
             // Другая логика, если необходимо
         }
 
-        binding.itemsList.layoutManager = LinearLayoutManager(requireContext())
+        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.itemsList.layoutManager = layoutManager
+        binding.itemsList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val spaceBetweenItems = resources.getDimensionPixelSize(R.dimen.space_between_items)
+        binding.itemsList.addItemDecoration(HorizontalSpaceItemDecoration(spaceBetweenItems))
         binding.itemsList.adapter = booksAdapter
+    }
+
+    private fun loadRandomBooks(): List<Book> {
+        val allBooks = loadBooks()
+        return allBooks.shuffled().take(8)
     }
 
     private fun loadBooks(): List<Book> {

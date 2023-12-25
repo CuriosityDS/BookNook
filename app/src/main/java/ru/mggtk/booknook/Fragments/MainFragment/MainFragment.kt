@@ -23,26 +23,18 @@ class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentMainBinding.inflate(inflater, container, false)
         val view = binding.root
-        replaceFragmentMain(HomeFragment())
-        replaceFragmentNavi(MenuNavigationFragment())
+        replaceFragment(HomeFragment(),R.id.MainView)
+        replaceFragment(MenuNavigationFragment(),R.id.MenuNavigation)
         return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
-    private fun replaceFragmentMain(fragment: Fragment) {
+    private fun replaceFragment(fragment: Fragment, placeFragment:Int) {
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.MainView, fragment)
-        transaction.addToBackStack(null)
+        transaction.replace(placeFragment, fragment)
         transaction.commit()
     }
-    private fun replaceFragmentNavi(fragment: Fragment) {
-        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.MenuNavigation, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
-
 
 
     companion object {

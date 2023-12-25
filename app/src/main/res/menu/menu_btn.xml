@@ -12,7 +12,7 @@
         android:fontFamily = "@font/quicksand_regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/searchicon"
+        android:icon= "@drawable/searchicon"
         android:title="@string/search" />
     <item
         android:id="@+id/profile"

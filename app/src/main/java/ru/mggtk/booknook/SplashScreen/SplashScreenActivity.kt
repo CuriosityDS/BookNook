@@ -1,5 +1,6 @@
 package ru.mggtk.booknook.SplashScreen
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
@@ -30,7 +31,6 @@ class SplashScreenActivity : AppCompatActivity() {
             openErrorActivity("No internet connection")
         }
     }
-
 
     private fun openErrorActivity(errorMessage: String) {
         val splashScreenDuration: Long = 4000
