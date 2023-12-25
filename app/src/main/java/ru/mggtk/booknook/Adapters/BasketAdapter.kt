@@ -37,7 +37,7 @@ class BasketAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val book = items[position]
-        holder.titleTextView.text = book.title
+        holder.titleTextView.text = book.title.toString()
         holder.priceTextView.text = "${book.price} руб."
 
         // Обработчик нажатия кнопки "удалить товар"

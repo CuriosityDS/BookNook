@@ -6,12 +6,15 @@ import androidx.lifecycle.ViewModel
 import ru.mggtk.booknook.dataclass.Book
 
 class BasketViewModel : ViewModel() {
+
     private val _basketItems = MutableLiveData<List<Book>>()
     val basketItems: LiveData<List<Book>> get() = _basketItems
+
 
     init {
         _basketItems.value = emptyList()
     }
+
 
     fun addToBasket(book: Book) {
         val currentItems = _basketItems.value ?: emptyList()
@@ -31,4 +34,5 @@ class BasketViewModel : ViewModel() {
         // Обновляем LiveData, чтобы уведомить наблюдателей об изменении
         _basketItems.value = currentBasket
     }
+
 }

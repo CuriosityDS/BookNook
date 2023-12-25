@@ -58,4 +58,28 @@
     <string name="russian_classics">.русская классика</string>
     <string name="russian_classics_info">тот самый богатый фольклор</string>
 
+    //книги
+
+    <string name="eugene_onegin">Евгений Онегин</string>
+    <string name="dubrovsky">Дубровский</string>
+    <string name="master_and_margarita">Мастер и Маргарита</string>
+    <string name="crime_and_punishment">Преступление и наказание</string>
+    <string name="war_and_peace">Война и мир</string>
+    <string name="anna_karenina">Анна Каренина</string>
+    <string name="karamazov_brothers">Братья Карамазовы</string>
+
+    <string name="amityville_horror">Амитивилльское зло</string>
+    <string name="gone_girl">Исчезновение Эмили Роуз</string>
+    <string name="dreamcatcher">Ловец снов</string>
+    <string name="sixth_sense">Шестое чувство</string>
+    <string name="harry_potter">Гарри Поттер и Дары Смерти</string>
+
+    <string name="pozor">1984</string>
+    <string name="little_prince">Маленький принц</string>
+    <string name="mockingbird">Убить пересмешника</string>
+    <string name="morphine">Морфий</string>
+    <string name="norwegian_forest">Норвежский лес</string>
+    <string name="shame_sun">Позор Солнца</string>
+
+
 </resources>

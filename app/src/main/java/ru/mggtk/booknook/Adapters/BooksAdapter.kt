@@ -1,19 +1,28 @@
 package ru.mggtk.booknook.Adapters
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ArgbEvaluator
+import android.animation.ValueAnimator
+import android.content.Context
 import android.content.res.Resources
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateInterpolator
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.core.animation.doOnEnd
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import ru.mggtk.booknook.R
 import ru.mggtk.booknook.dataclass.Book
 
-class BooksAdapter(private var books: List<Book>, private val onAddToCartClickListener: (Book) -> Unit) :
+class BooksAdapter(private val context: Context, private var books: List<Book>, private val onAddToCartClickListener: (Book) -> Unit) :
     RecyclerView.Adapter<BooksAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -30,13 +39,14 @@ class BooksAdapter(private var books: List<Book>, private val onAddToCartClickLi
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val book = books[position]
-        holder.titleTextView.text = book.title
+        holder.titleTextView.text = book.title.toString()
         holder.priceTextView.text = "${book.price} руб."
 
         // Используем Picasso для загрузки изображения
         Picasso.get().load(book.imageUrl).into(holder.imageView)
 
         holder.addToCartButton.setOnClickListener {
+            animateAddToCartButton(holder.addToCartButton)
             onAddToCartClickListener.invoke(book)
         }
 
@@ -45,6 +55,7 @@ class BooksAdapter(private var books: List<Book>, private val onAddToCartClickLi
         val params = holder.itemView.layoutParams as RecyclerView.LayoutParams
         params.bottomMargin = marginBottom
         holder.itemView.layoutParams = params
+
     }
 
     private fun dpToPx(dp: Int): Int {
@@ -54,6 +65,39 @@ class BooksAdapter(private var books: List<Book>, private val onAddToCartClickLi
     fun updateItems(newItems: List<Book>) {
         books = newItems
         notifyDataSetChanged()
+    }
+
+    private fun animateAddToCartButton(button: Button) {
+        val container = button.parent as? ViewGroup ?: return
+
+        val whiteButton = Button(context)
+        whiteButton.setBackgroundResource(R.drawable.rounded_white_button)
+        whiteButton.layoutParams = FrameLayout.LayoutParams(
+            FrameLayout.LayoutParams.MATCH_PARENT,
+            FrameLayout.LayoutParams.MATCH_PARENT
+        )
+
+        // Добавляем белую кнопку в начало контейнера (на передний план)
+        container.addView(whiteButton, 0)
+
+        val startAlpha = 0f
+        val endAlpha = 1f
+
+        val alphaAnimation = ValueAnimator.ofFloat(startAlpha, endAlpha)
+        alphaAnimation.duration = 500
+
+        alphaAnimation.addUpdateListener { animator ->
+            whiteButton.alpha = 1 - animator.animatedValue as Float
+        }
+
+        alphaAnimation.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator) {
+                // После завершения анимации удаляем белую кнопку
+                container.removeView(whiteButton)
+            }
+        })
+
+        alphaAnimation.start()
     }
 
     override fun getItemCount(): Int {

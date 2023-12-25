@@ -60,4 +60,27 @@
     <string name="russian_classics">.russian classics</string>
     <string name="russian_classics_info">the same rich folklore</string>
 
+    //books
+
+    <string name="eugene_onegin">Eugene Onegin</string>
+    <string name="dubrovsky">Dubrovsky</string>
+    <string name="master_and_margarita">The Master and Margarita</string>
+    <string name="crime_and_punishment">Crime and punishment</string>
+    <string name="war_and_peace">War and Peace</string>
+    <string name="anna_karenina">Anna Karenina</string>
+    <string name="karamazov_brothers">The Karamazov Brothers</string>
+
+    <string name="amityville_horror">The Amityville Horror</string>
+    <string name="gone_girl">Gone Girl</string>
+    <string name="dreamcatcher">The Dreamcatcher</string>
+    <string name="sixth_sense">The Sixth Sense</string>
+    <string name="harry_potter">Harry Potter and the Deathly Hallows</string>
+
+    <string name="pozor">1984</string>
+    <string name="little_prince">The Little Prince</string>
+    <string name="mockingbird">To Kill a Mockingbird</string>
+    <string name="morphine">Morphine</string>
+    <string name="norwegian_forest">Norwegian Forest</string>
+    <string name="shame_sun">The Shame of the Sun</string>
+
 </resources>

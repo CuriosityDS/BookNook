@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import kotlinx.coroutines.Dispatchers.Main
+import ru.mggtk.booknook.Fragments.AdvertFragment
 import ru.mggtk.booknook.Fragments.MenuFragment.MenuNavigationFragment
 import ru.mggtk.booknook.R
 import ru.mggtk.booknook.SplashScreen.SplashScreenWelcomeActivity
@@ -33,8 +34,8 @@ class ProfileFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        replaceFragment(AdvertFragment(),R.id.advertHolderProfile)
         binding = FragmentProfileBinding.inflate(inflater, container, false)
-
 
         languageManager = LanguageManager(requireContext())
 
@@ -45,10 +46,6 @@ class ProfileFragment : Fragment() {
         binding.btnAbout.setOnClickListener {
             showAboutDialog(requireContext())
         }
-        binding.btnChangeTheme.setOnClickListener {
-
-        }
-
 
         return binding.root
     }
@@ -83,6 +80,11 @@ class ProfileFragment : Fragment() {
             }
 
         builder.create().show()
+    }
+    private fun replaceFragment(fragment: Fragment, placeFragment:Int) {
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+        transaction.replace(placeFragment, fragment)
+        transaction.commit()
     }
 
 

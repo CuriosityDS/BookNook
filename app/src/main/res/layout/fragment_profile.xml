@@ -10,17 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView14"
-            android:layout_width="416dp"
-            android:layout_height="339dp"
-            android:layout_marginTop="-90dp"
-            android:src="@drawable/banner"
+        <FrameLayout
+            android:id="@+id/advertHolderProfile"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/banner" />
+            app:layout_constraintTop_toTopOf="parent">
+
+        </FrameLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnChangeLanguage"
@@ -52,32 +50,17 @@
             app:layout_constraintStart_toStartOf="@+id/textView9"
             app:layout_constraintTop_toBottomOf="@+id/btnChangeLanguage" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnChangeTheme"
-            android:layout_width="270dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="-2dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="@color/dark_gray"
-            android:gravity="left"
-            android:text="@string/about"
-            android:textAllCaps="false"
-            android:textColor="@color/gray"
-            android:textSize="10dp"
-            app:layout_constraintStart_toStartOf="@+id/textView9"
-            app:layout_constraintTop_toBottomOf="@+id/btnAbout" />
-
         <TextView
             android:id="@+id/textView8"
             style="@style/titleTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-30dp"
+            android:layout_marginTop="50dp"
             android:text="@string/welcometext"
             android:textColor="@color/gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+            app:layout_constraintTop_toBottomOf="@+id/advertHolderProfile" />
 
         <TextView
             android:id="@+id/textView9"
