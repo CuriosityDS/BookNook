@@ -21,6 +21,7 @@ class AdvertFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentAdvertBinding.inflate(inflater, container, false)
         binding.viewPagerAdvert.adapter = ViewPagerAdapter()
+        binding.viewPagerAdvert.isUserInputEnabled = false
         showProgress()
         return binding.root
     }

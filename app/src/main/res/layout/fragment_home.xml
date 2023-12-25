@@ -7,49 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.ShopFragments.HomeFragment">
 
-    <FrameLayout
-        android:id="@+id/advertHolder"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent" >
 
-    </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView5"
-        style="@style/titleTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/recommendations"
-        android:textColor="@color/gray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/advertHolder" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView6"
-        style="@style/titleTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/recommendationssubtitle"
-        android:textColor="@color/gray"
-        android:textSize="14dp"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/productHome"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
+            <FrameLayout
+                android:id="@+id/productRecomedHome"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
 
-    </FrameLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/advertHolder"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp">
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/productSellerHome"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/russianClassicsHolder"
+                android:layout_width="409dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

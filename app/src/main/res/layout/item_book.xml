@@ -7,6 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="25dp"
     android:layout_marginBottom="25dp"
+    android:gravity="center"
     android:orientation="vertical">
 
     <ImageView
@@ -15,21 +16,24 @@
         android:layout_height="210dp"
         android:adjustViewBounds="true"
         android:padding="8dp"
+        android:gravity="center"
         android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="140dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginTop="4dp"
+        android:gravity="center|center_vertical"
         android:textSize="14sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/priceTextView"
         android:layout_width="140dp"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_marginTop="4dp"
+        android:gravity="center"
         android:textSize="12sp" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -41,5 +45,6 @@
         android:layout_marginTop="6dp"
         android:height="20dp"
         android:text="@string/add_basket"
+        android:gravity="center"
         android:textSize="10sp" />
 </LinearLayout>

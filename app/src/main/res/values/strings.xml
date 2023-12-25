@@ -52,4 +52,12 @@
 
     <string name="abouttext">Welcome to the BookNook program, developed by Curiosity for educational purposes as part\nof practical training. The program is designed to streamline the book purchasing process and make it more\nconvenient for users. BookNook offers a unique opportunity to explore the world of literature, providing a wide\nrange of books across various genres.</string>
 
+    //genres
+
+    <string name="horrors">.horrors</string>
+    <string name="horrors_info">it`s worth reading at night</string>
+
+    <string name="russian_classics">.russian classics</string>
+    <string name="russian_classics_info">the same rich folklore</string>
+
 </resources>
