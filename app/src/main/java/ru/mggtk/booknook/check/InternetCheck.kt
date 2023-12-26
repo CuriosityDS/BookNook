@@ -5,6 +5,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 
+
 object InternetCheckUtil {
 
     fun isInternetAvailable(context: Context): Boolean {

@@ -2,35 +2,83 @@
 <!-- item_basket.xml -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_marginBottom="8dp"
     android:layout_marginHorizontal="10dp">
 
-    <TextView
-        android:id="@+id/titleTextView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:padding="8dp"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/priceTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:padding="8dp"/>
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        style="@style/whiteButtonStyle"
-        android:id="@+id/deleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/delete"
-        android:onClick="onDeleteButtonClick"
-        android:padding="8dp"/>
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/deleteButton"
+            style="@style/whiteButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:padding="8dp"
+            android:text="@string/delete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/priceTextView" />
+
+        <TextView
+            android:id="@+id/quantityTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/deleteButton"
+            app:layout_constraintTop_toBottomOf="@+id/deleteButton" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/increaseQuantityButton"
+            style="@style/whiteOutlineButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:padding="8dp"
+            android:text="+"
+            app:layout_constraintStart_toStartOf="@+id/quantityTextView"
+            app:layout_constraintTop_toBottomOf="@+id/quantityTextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/decreaseQuantityButton"
+            style="@style/whiteOutlineButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:padding="8dp"
+            android:text="-"
+            app:layout_constraintStart_toEndOf="@+id/increaseQuantityButton"
+            app:layout_constraintTop_toBottomOf="@+id/quantityTextView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Добавьте другие Views, если они есть -->
 

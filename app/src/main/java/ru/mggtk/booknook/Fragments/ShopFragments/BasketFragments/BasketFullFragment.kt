@@ -32,9 +32,13 @@ class BasketFullFragment : Fragment() {
 
         basketViewModel = ViewModelProvider(requireActivity()).get(BasketViewModel::class.java)
 
-        val adapter = BasketAdapter(basketViewModel.basketItems.value ?: emptyList()) { book ->
-            onDeleteItemClick(book)
-        }
+        val adapter = BasketAdapter(
+            requireContext(),
+            basketViewModel.basketItems.value ?: emptyList(),
+            onDeleteItemClickListener = { book -> onDeleteItemClick(book) },
+            onIncreaseQuantityClick = { book -> onIncreaseQuantityClick(book) },
+            onDecreaseQuantityClick = { book -> onDecreaseQuantityClick(book) }
+        )
 
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
@@ -47,7 +51,6 @@ class BasketFullFragment : Fragment() {
 
         // Обработка нажатия кнопки "оплатить"
         binding.payButton.setOnClickListener {
-
             onPayButtonClick()
         }
 
@@ -58,26 +61,44 @@ class BasketFullFragment : Fragment() {
     }
 
     private fun updateTotalPrice(items: List<Book>) {
-        val totalPrice = items.sumByDouble { it.price }
+        val totalPrice = items.sumByDouble { it.price * it.quantity }
         val formattedTotalPrice = String.format("%.2f", totalPrice)
         binding.totalPriceTextView.text = "${getString(R.string.total_cost)}: $formattedTotalPrice руб."
     }
 
     private fun onPayButtonClick() {
+        // Получаем текущую общую стоимость корзины
+        val totalCost = basketViewModel.basketItems.value?.sumByDouble { it.price * it.quantity } ?: 0.0
 
-        // Очищаем корзину
-        basketViewModel.clearBasket()
-        // Обновляем интерфейс
-        binding.totalPriceTextView.text = "${getString(R.string.total_cost)}: 0 руб."
-        // Выводим сообщение об успешной оплате
-        Toast.makeText(requireContext(), "${getString(R.string.order_paid)}", Toast.LENGTH_SHORT).show()
+        if (totalCost > 0) {
+            // Очищаем корзину
+            basketViewModel.clearBasket()
 
-        // Закрываем фрагмент после оплаты
+            // Обновляем интерфейс
+            binding.totalPriceTextView.text = "${getString(R.string.total_cost)}: 0 руб."
+
+            // Выводим сообщение об успешной оплате
+            Toast.makeText(requireContext(), getString(R.string.order_paid), Toast.LENGTH_SHORT).show()
+
+            // Закрываем фрагмент после оплаты (если требуется)
+            // fragmentManager?.beginTransaction()?.remove(this)?.commit()
+        } else {
+        }
     }
 
     private fun onDeleteItemClick(book: Book) {
         // Удаляем товар из корзины
         basketViewModel.removeFromBasket(book)
+    }
+
+    private fun onIncreaseQuantityClick(book: Book) {
+        // Увеличиваем количество товара в корзине
+        basketViewModel.addToBasket(book)
+    }
+
+    private fun onDecreaseQuantityClick(book: Book) {
+        // Уменьшаем количество товара в корзине
+        basketViewModel.decreaseQuantity(book)
     }
 }
 

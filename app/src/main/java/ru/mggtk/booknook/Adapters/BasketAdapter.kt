@@ -1,5 +1,6 @@
 package ru.mggtk.booknook.Adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +11,12 @@ import ru.mggtk.booknook.R
 import ru.mggtk.booknook.dataclass.Book
 
 class BasketAdapter(
+    private val context: Context,
     private var items: List<Book>,
-    private var onDeleteClickListener: (Book) -> Unit
+    private var onDeleteItemClickListener: ((Book) -> Unit)? = null,
+    private val onIncreaseQuantityClick: ((Book) -> Unit)? = null,
+    private val onDecreaseQuantityClick: ((Book) -> Unit)? = null
 ) : RecyclerView.Adapter<BasketAdapter.ViewHolder>() {
-
 
     fun updateItems(newItems: List<Book>) {
         items = newItems
@@ -21,13 +24,16 @@ class BasketAdapter(
     }
 
     fun setOnDeleteClickListener(listener: (Book) -> Unit) {
-        onDeleteClickListener = listener
+        onDeleteItemClickListener = listener
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
         val priceTextView: TextView = itemView.findViewById(R.id.priceTextView)
+        val quantityTextView: TextView = itemView.findViewById(R.id.quantityTextView)
         val deleteButton: Button = itemView.findViewById(R.id.deleteButton)
+        val increaseQuantityButton: Button = itemView.findViewById(R.id.increaseQuantityButton)
+        val decreaseQuantityButton: Button = itemView.findViewById(R.id.decreaseQuantityButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -37,13 +43,26 @@ class BasketAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val book = items[position]
-        holder.titleTextView.text = book.title.toString()
-        holder.priceTextView.text = "${book.price} руб."
 
-        // Обработчик нажатия кнопки "удалить товар"
+        holder.titleTextView.text = book.title
+        holder.priceTextView.text = "${book.roundedPrice} руб." // Используем округленную цену
+        holder.quantityTextView.text = "${context.getString(R.string.quantity)}: ${book.quantity}"
+
         holder.deleteButton.setOnClickListener {
-            onDeleteClickListener.invoke(book)
+            onDeleteItemClickListener?.invoke(book)
         }
+
+        holder.increaseQuantityButton.setOnClickListener {
+            onIncreaseQuantityClick?.invoke(book)
+        }
+
+        holder.decreaseQuantityButton.setOnClickListener {
+            onDecreaseQuantityClick?.invoke(book)
+        }
+    }
+
+    fun notifyDataChanged() {
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {

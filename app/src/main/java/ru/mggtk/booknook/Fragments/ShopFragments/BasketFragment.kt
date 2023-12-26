@@ -33,7 +33,20 @@ class BasketFragment : Fragment() {
 
         basketViewModel = ViewModelProvider(requireActivity()).get(BasketViewModel::class.java)
 
-        // Проверяем, есть ли товары в корзине
+        // Наблюдаем за изменениями в корзине
+        basketViewModel.basketItems.observe(viewLifecycleOwner, { items ->
+            if (items.isNotEmpty()) {
+                loadFullBasketFragment()
+            } else {
+                loadEmptyBasketFragment()
+            }
+        })
+
+        // Проверяем корзину при первом запуске фрагмента
+        checkBasketAndLoadFragment()
+    }
+
+    private fun checkBasketAndLoadFragment() {
         if (basketViewModel.basketItems.value?.isNotEmpty() == true) {
             loadFullBasketFragment()
         } else {
@@ -53,3 +66,5 @@ class BasketFragment : Fragment() {
             .commit()
     }
 }
+
+
